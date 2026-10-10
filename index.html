@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7e8e4">
+
+  <title>To my babi</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 30px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #493b39;
+      background:
+        radial-gradient(circle at top left, #fff5ef, transparent 45%),
+        #f7e8e4;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    button:focus-visible {
+      outline: 2px solid #a66c75;
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 620px;
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #a66c75;
+      letter-spacing: 3px;
+      font: 11px Arial, sans-serif;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(29px, 7vw, 43px);
+      font-weight: normal;
+      margin: 16px 0;
+    }
+
+    .intro {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #967f7a;
+    }
+
+    .letter {
+      position: relative;
+      margin-top: 28px;
+      padding: clamp(24px, 6vw, 48px);
+      background: #fffaf3;
+      border: 1px solid #ead6cc;
+      border-radius: 5px;
+      box-shadow: 0 20px 50px #4e2e341b;
+      text-align: left;
+    }
+
+    .letter-heading {
+      text-align: center;
+      color: #ad7b7d;
+      letter-spacing: 2px;
+      font-size: 12px;
+      margin-bottom: 28px;
+    }
+
+    #letterText {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      line-height: 1.95;
+      font-size: 16px;
+      min-height: 180px;
+    }
+
+    .caret {
+      display: inline-block;
+      width: 2px;
+      height: 17px;
+      margin-left: 2px;
+      vertical-align: -2px;
+      background: #c96f78;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    #signoff {
+      display: none;
+      margin-top: 28px;
+      color: #a66c75;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    #question {
+      display: none;
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 1px solid #ead6cc;
+      text-align: center;
+      animation: appear 1s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #question h2 {
+      font-size: clamp(23px, 5vw, 30px);
+      font-weight: normal;
+      line-height: 1.5;
+    }
+
+    #question p {
+      font: 13px/1.8 Arial, sans-serif;
+      color: #967f7a;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .choice {
+      padding: 13px 23px;
+      border-radius: 30px;
+      font-size: 14px;
+    }
+
+    #yes {
+      background: #c96f78;
+      color: white;
+      border: 1px solid #c96f78;
+    }
+
+    #yes:hover {
+      background: #b85d68;
+    }
+
+    #no {
+      background: transparent;
+      color: #806d69;
+      border: 1px solid #ddc6c0;
+    }
+
+    #response {
+      margin-top: 22px;
+      color: #a66c75;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .music {
+      margin-top: 25px;
+      color: #967f7a;
+      font: 13px/1.8 Arial, sans-serif;
+    }
+
+    #musicBtn {
+      margin-top: 10px;
+      padding: 12px 22px;
+      border: 1px solid #ead6cc;
+      border-radius: 30px;
+      background: #fffaf3;
+      color: #a66c75;
+    }
+
+    .music-note {
+      font-size: 11px;
+      color: #a28e88;
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 20px;
+      color: #a28e88;
+      font: 11px Arial, sans-serif;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="subtitle">Something from my heart</div>
+
+    <h1>Babi</h1>
+
+    <div class="intro">
+      Take your time.<br>
+      I wrote this just for you.
+    </div>
+
+    <section class="letter">
+
+      <div class="letter-heading">
+        TO MY BABI
+      </div>
+
+      <div id="letterText"></div>
+      <span class="caret" id="caret" aria-hidden="true"></span>
+
+      <div id="signoff">
+        — from someone who's really glad he met you 
+      </div>
+
+      <div id="question">
+        <h2> will you be my girlfriend?</h2>
+
+        <p>
+          No pressure. I just wanted to be honest<br>
+          about my feelings. 
+        </p>
+
+        <div class="buttons">
+          <button class="choice" id="yes">
+            Yes, I will ♡
+          </button>
+
+          <button class="choice" id="no">
+            Not yet
+          </button>
+        </div>
+
+        <div id="response" aria-live="polite"></div>
+      </div>
+
+    </section>
+
+    <div class="music">
+      ♫ Someday — The Ridleys <br>
+
+      <button id="musicBtn" type="button">
+        ▶ Play song
+      </button>
+
+      <div class="music-note" id="musicStatus">
+        A little song to go with this letter.
+      </div>
+    </div>
+
+    <!-- Your own downloaded MP3 file -->
+    <audio id="bgMusic"
+           src="audio/someday.mp3"
+           preload="auto"
+           loop>
+    </audio>
+
+    <footer>
+      Made with a little courage and a lot of care ♡
+    </footer>
+
+  </main>
+
+  <script>
+    // ==========================================
+    // 1. PERSONALIZE YOUR LETTER HERE
+    // ==========================================
+
+    const message = `Hi, babab.
+
+I've been wanting to tell you this properly, and I figured you deserve more than a quick message.
+
+Since you came into my life, you've given me so many little reasons to smile. I like getting to know you—the way we talk, the little things you share, and how even an ordinary day can feel a bit more special because of you.
+
+I don't want to rush you or promise that I'll always get everything right. I just want to keep showing up, listening to you, making you laugh, and learning how to care for you in the way you deserve.
+
+I want us to keep choosing honesty, patience, and communication, even on the days when things aren't perfect.
+
+I can't tell you exactly what the future will look like, but I'd love the chance to discover it with you—one memory, one conversation, and one little adventure at a time.
+
+And maybe someday, we'll look back at this moment and smile at how it all began.
+
+So here I am, being brave for once and telling you what's been on my mind: you've become someone really special to me, and I'd love to take this next step with you.`;
+
+    // ==========================================
+    // 2. GET THE PAGE ELEMENTS
+    // ==========================================
+
+    const letterText = document.getElementById("letterText");
+    const caret = document.getElementById("caret");
+    const signoff = document.getElementById("signoff");
+    const question = document.getElementById("question");
+
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+    const musicStatus = document.getElementById("musicStatus");
+
+    let index = 0;
+    let typingStarted = false;
+    let typingFinished = false;
+    let typingTimer = null;
+
+    // ==========================================
+    // 3. TYPEWRITER EFFECT
+    // ==========================================
+
+    function typeLetter() {
+      if (index < message.length) {
+        const character = message[index];
+
+        letterText.textContent += character;
+        index++;
+
+        let delay = 32;
+
+        // Pause a little longer at punctuation.
+        if (".!?".includes(character)) {
+          delay = 350;
+        } else if (",;:".includes(character)) {
+          delay = 160;
+        } else if (character === "\n") {
+          delay = 200;
+        }
+
+        typingTimer = setTimeout(typeLetter, delay);
+      } else {
+        finishLetter();
+      }
+    }
+
+    function startTyping() {
+      if (typingStarted) return;
+
+      typingStarted = true;
+      typeLetter();
+    }
+
+    function finishLetter() {
+      typingFinished = true;
+      caret.style.display = "none";
+      signoff.style.display = "block";
+      question.style.display = "block";
+
+      // Bring the final question into view.
+      question.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
+
+    // ==========================================
+    // 4. LOCAL MUSIC PLAYER
+    // ==========================================
+
+    music.volume = 0.65;
+
+    musicBtn.addEventListener("click", async function() {
+      try {
+        if (music.paused) {
+          await music.play();
+
+          musicBtn.textContent = "❚❚ Pause song";
+          musicStatus.textContent =
+            "Now playing: Someday — The Ridleys ♡";
+
+          // Start typing when the visitor first plays music.
+          startTyping();
+        } else {
+          music.pause();
+
+          musicBtn.textContent = "▶ Play song";
+          musicStatus.textContent =
+            "Paused. Tap play whenever you're ready.";
+        }
+      } catch (error) {
+        musicStatus.textContent =
+          "Couldn't play the song. Check the audio file path.";
+
+        console.error("Audio playback error:", error);
+      }
+    });
+
+    music.addEventListener("error", function() {
+      musicStatus.textContent =
+        "Song unavailable. Check audio/someday.mp3 in your repository.";
+    });
+
+    // If the song ends, reset the music button.
+    music.addEventListener("ended", function() {
+      musicBtn.textContent = "▶ Play song";
+    });
+
+    // ==========================================
+    // 5. YES BUTTON
+    // ==========================================
+
+    document.getElementById("yes").addEventListener("click", function() {
+      document.querySelector("#question h2").textContent =
+        "A new little beginning ♡";
+
+      document.querySelector("#question p").textContent =
+        "I'm looking forward to making more memories with you.";
+
+      document.getElementById("response").textContent =
+        "You just made me really, really happy. Thank you for giving us a chance. Here's to our little beginning. ♡";
+
+      document.getElementById("no").style.display = "none";
+
+      this.textContent = "My heart is happy ♡";
+      this.disabled = true;
+    });
+
+    // ==========================================
+    // 6. NOT YET BUTTON
+    // ==========================================
+
+    document.getElementById("no").addEventListener("click", function() {
+      document.getElementById("response").textContent =
+        "That's okay. Thank you for being honest with me. You don't have to decide before you're ready. I'll respect your feelings. ♡";
+
+      this.textContent = "Thank you for understanding";
+      this.disabled = true;
+    });
+
+    // ==========================================
+    // 7. START THE LETTER
+    // ==========================================
+
+    // The letter starts typing after a short delay.
+    // Music can be started separately using the button.
+    window.addEventListener("load", function() {
+      setTimeout(startTyping, 650);
+    });
+  </script>
+</body>
+  </html>
+  
